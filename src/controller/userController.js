@@ -44,7 +44,10 @@ export const getUserById = async (req, res) => {
             return res.status(400).json({ message: 'Invalid ID format' });
         }
         const data = await UserModel.findOne({ _id: id });
-        res.status(200).json({ message: ' retrive User  successfully', data });
+        if (!data){
+            return res.status(404).json({message: "User Not Found "})
+        }
+        res.status(200).json({ message: ' Retrive User  successfully', data });
     } catch (error) {
         res.status(500).json({ error: ' INTERNAL SERVER ERROR ' });
 
