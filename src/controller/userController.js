@@ -12,13 +12,7 @@ export const userRegistration = async (req, res) => {
         }
 
         const hashedPassword = await bcrypt.hash(req.body.password, saltRounds);
-        const newUser = await UserModel({
-            phone: req.body.phone,
-            name: req.body.name,
-            role: req.body.role,
-            email: req.body.email,
-            password: hashedPassword
-        });
+        const newUser = await UserModel({...req.body, password:hashedPassword});
 
         const user = await newUser.save();
         res.status(201).json({ message: 'User registered successfully', user });

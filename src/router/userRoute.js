@@ -4,9 +4,9 @@ import { userRegistration, getAllUser, getUserById, updateUserById } from "../co
 
 const router = express.Router();
 
-router.post("/user", userRegistration);
-router.get("/user", getAllUser);
-router.get("/user/one/:id", getUserById);
-router.patch("/user/one/:id", updateUserById);
+router.post("/", userRegistration);
+router.get("/", getAllUser);
+router.get("/one/:id", getUserById);
+router.patch("/one/:id", updateUserById);
 
 export default router;
