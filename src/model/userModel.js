@@ -10,12 +10,25 @@ const userSchema = new mongoose.Schema({
         type:Boolean,
         default:false
     },
-    name: { 
+    names: { 
         type: String,  
     },
     phone: { 
         type: String, 
     },
+    status: { 
+        type: String, 
+    },
+    drivingLicence: { 
+        type: String, 
+    },
+    nid: { 
+        type: String, 
+    },
+    companyProfileId: {
+        type: mongoose.Types.ObjectId,
+        ref: "companyProfile",
+      },
     picture: {
         type: String 
         },
@@ -31,9 +44,10 @@ const userSchema = new mongoose.Schema({
     },
     role: { 
         type: String, 
-        enum: ['user', 'admin'], 
+        enum: ['user', 'admin', 'driver'], 
         default: 'user' 
     },
+
 },
 {timestamps: true}
 );
