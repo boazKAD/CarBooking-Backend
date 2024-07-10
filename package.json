@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon --exec babel-node server.js",
-    "start": "babel-node server.js --name carbooking-backend ",
-    "build": "--exec babel src/ -d dist/"
+    "start": "--exec babel-node server.js --name carbooking-backend ",
+    "build": "--exec babel-node src/ -d dist/"
   },
   "keywords": [],
   "author": "",
