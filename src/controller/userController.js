@@ -14,9 +14,9 @@ export const userRegistration = async (req, res) => {
         console.log("req:::::::::", req );
 
         const hashedPassword = await bcrypt.hash(req.body.password, saltRounds);
-        const newUser = await UserModel({...req.body, password:hashedPassword});
+        const user = await UserModel.create({...req.body, password:hashedPassword});
 
-        const user = await newUser.save();
+        // const user = await newUser.save();
         res.status(201).json({ message: 'User registered successfully', user });
     } catch (error) {
         console.log(error);
