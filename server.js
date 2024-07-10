@@ -1,10 +1,12 @@
 import express from 'express';
 import morgan from 'morgan';
+import cors from "cors";
 import bodyParser from "body-parser";
 import  {connectToDatabase} from './src/batabase/db';
 import router from './src/router/index';
 
 const app = express();
+app.use(cors());
 require('dotenv').config();
 const port = process.env.port || 5000;
 
