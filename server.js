@@ -10,6 +10,7 @@ const port = process.env.port || 5000;
 
 app.use(express.json());
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("dev")); 
 app.use("/api",router)
 
