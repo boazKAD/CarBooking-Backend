@@ -10,6 +10,8 @@ export const userRegistration = async (req, res) => {
         if (existingUser) {
             return res.status(409).json({ message: 'User already exists' });
         }
+        console.log("req body:::::::::", req.body );
+        console.log("req:::::::::", req );
 
         const hashedPassword = await bcrypt.hash(req.body.password, saltRounds);
         const newUser = await UserModel({...req.body, password:hashedPassword});
