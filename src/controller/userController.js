@@ -54,6 +54,7 @@ export const updateUserById = async (req, res) => {
     try {
         const id = req.params.id
         const updates = req.body
+        console.log("updates::::::::", updates)
         if (!mongoose.Types.ObjectId.isValid(id)) {
             return res.status(400).json({ message: 'Invalid ID format' });
         }
