@@ -9,10 +9,15 @@ const app = express();
 app.use(cors());
 require('dotenv').config();
 const port = process.env.port || 5000;
-
+// force
+// const app = express();/
+app.use(cors());
+app.use(bodyParser.json({ limit: "50mb", type: "application/json" }));
+app.use(express.json());
+// force
 app.use(express.json());
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("dev")); 
 app.use("/api",router)
 
