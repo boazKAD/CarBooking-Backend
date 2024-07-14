@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon --exec babel-node server.js",
-    "start": "node server.js --name carbooking-backend",
+    "start": "node server.js",
     "build": "babel-node src/ -d dist/"
   },
   "keywords": [],
